@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+body {
+    background-color: #6586a7;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+input {
+    outline: 0;
+}
+
+/*--------------------------------------------------------------------------*/
+
+.popup, .popup2, .popup3 {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 100;
+}
+
+.popupoptns {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    background-color: white;
+    height: 200px;
+    width: 500px;
+    border-radius: 8px;
+}
+
+.popupoptns h2 {
+    font-size: 20px;
+    position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+.popupoptns button {
+    cursor: pointer;
+}
+
+.popupoptns input {
+    position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+.popupoptns .confirmar {
+    position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+.popupoptns .fechar {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    padding: 0 5px;
+    background: none;
+    border: none;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.popupoptns .fechar:hover {
+    background-color: rgb(216, 216, 216);
+    transition: all 0.3s;
+}
+
+/*---------------------------------------------------*/
+
+header {
+    display: flex;
+    padding: 2.5% 5%;
+}
+
+header h1 {
+    width: 100%;
+    color: white;
+    font-size: 25px;
+}
+
+header button {
+    color: white;
+    border: none;
+    transition: all 0.3s;
+    background-color: #838383;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 180px;
+    padding: .5% 2%;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+}
+
+header button:hover {
+    transition: all 0.3s;
+    background-color: #757575;
+}
+
+/*---------------------------------------------------*/
+
+.cards {
+    display: flex;
+    padding: 0 5%;
+    align-items:flex-start;
+    align-content:flex-start;
+}
+
+.default {
+    display: block;
+    position: relative;
+    width: 315px;
+    height: auto;
+    background-color: #b8babd;
+    border-radius: 8px;
+    box-shadow: 0 0 0.5em rgb(68, 68, 68);
+    padding: 5px 7px;
+    margin-right: 15px;
+}
+
+.default h2 {
+    color: white;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+}
+
+.default .fechar {
+    position: absolute;
+    right: 5px;
+    background: none;
+    border: none;
+    transition: all 0.3s;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 2px 5px;
+    height: 20px;
+}
+
+.default .fechar:hover {
+    background-color: rgb(202, 202, 202);
+    transition: all 0.3s;
+}
+
+.default .addbtn {
+    position: relative;
+    bottom: 0;
+    transition: all 0.3s;
+    background-color: rgba(139, 139, 139, 0.5);
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.default .addbtn:hover {
+    transition: all 0.3s;
+    background-color: rgba(110, 110, 110, 0.5);
+}
+
+.afazer {
+    background-color: #77c1f6;
+}
+
+.fazendo {
+    background-color: #8b5dc5;
+}
+
+.feito {
+    background-color: #7acc97;
+}
+
+/*---------------------------------------------------*/
+
+.textcard {
+    display: flex;
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.textcard p {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    padding: 5px;
+}
+
+.botaodeletar {
+    display: flex;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: 6.5px;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#cor {
+    cursor: pointer;
+}

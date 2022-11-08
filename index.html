@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <script src="https://kit.fontawesome.com/34c3b14267.js" crossorigin="anonymous"></script>
+    <title> Projeto Kanban </title>
+</head>
+<body>
+
+    <div class="popup" id="popup">
+        <div class="popupoptns">
+            <button id="fechar" class="fechar"><i class="fa-solid fa-xmark"></i></button>
+            <h2>Pré configurados: <button id="afazeres">A Fazeres</button> <button id="fazendo">Fazendo</button> <button id="feito">Feito</button></h2>
+            <h2>Criar novo card: <button id="new">Novo Card</button></h2>
+        </div> <!-- popupoptns -->
+    </div> <!-- popup -->
+
+    <div class="popup2" id="popup2">
+        <div class="popupoptns">
+            <button id="fechar2" class="fechar"><i class="fa-solid fa-xmark"></i></button>
+            <input type="text" id="titulo" placeholder="Titulo" />
+            <input type="color" id="cor" value="#b8babd" />
+            <button id="confirmar" class="confirmar">CONFIRMAR</button>
+        </div> <!-- popupoptns -->
+    </div> <!-- popup2 -->
+
+    <div class="popup3" id="popup3">
+        <div class="popupoptns">
+            <button id="fechar3" class="fechar"><i class="fa-solid fa-xmark"></i></button>
+            <input type="text" id="conteudo" placeholder="Conteúdo" />
+            <button id="enviar2" class="confirmar">OK</button>
+        </div> <!-- popupoptns -->
+    </div> <!-- popup3 -->
+
+    <header>
+        <h1>Projeto Kanban</h1>
+        <button id="adicionarcard">+ Adicionar Card</button>
+    </header>
+
+    <section>
+        <div class="cards">
+            <!-- Cards aqui -->
+        </div> <!-- cards -->
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
