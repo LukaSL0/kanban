@@ -35,255 +35,254 @@ fechar3.addEventListener('click', () => {popup3.style.display = 'none';});
 
 // ---------------------------------------------------------------//
 
-fazer.addEventListener('click', afazer);
-let divAF = document.createElement('div');
-fazendo.addEventListener('click', zfazendo)
-let divFA = document.createElement('div');
-feito.addEventListener('click', zfeito);
-let divFE = document.createElement('div');
+fazer.addEventListener('click', () => {
+    let id = 1;
+    cardDefinido(id)
+});
+fazendo.addEventListener('click', () => {
+    let id = 2;
+    cardDefinido(id)
+});
+feito.addEventListener('click', () => {
+    let id = 3;
+    cardDefinido(id)
+});
+const divAF = document.createElement('div');
+const divFA = document.createElement('div');
+const divFE = document.createElement('div');
 
-var x = 0;
+let x = 0;
 
-function afazer() {
-    if (divAF.classList.contains('afazer')) {
+const cardDefinido = (id) => {
+    console.log(id);
+    if (id == 1 && divAF.classList.contains('afazer')) {
         alert('[ERRO] O Card A Fazeres já existe.');
-    } else {
-        divAF.classList.add('default');
-        divAF.classList.add('afazer');
-        cards.appendChild(divAF);
-
-        let fecharAF = document.createElement('button');
-        fecharAF.classList.add('fechar');
-        fecharAF.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-        fecharAF.addEventListener('click', () => {
-            divAF.classList.remove('afazer');
-            divAF.removeChild(divTextos);
-            divAF.removeChild(fecharAF)
-            divAF.removeChild(h2AF);
-            divAF.removeChild(botaoAF);
-            cards.removeChild(divAF);
-        });
-        divAF.appendChild(fecharAF);
-
-        let h2AF = document.createElement('h2');
-        h2AF.innerHTML = 'A Fazeres';
-        divAF.appendChild(h2AF);
-
-        let divTextos = document.createElement('div');
-        divAF.appendChild(divTextos);
-
-        let botaoAF = document.createElement('button');
-        botaoAF.classList.add('addbtn');
-        botaoAF.innerHTML = '+ Adicionar Lembrete';
-        botaoAF.addEventListener('click', () => {
-            popupAF();
-        })
-        divAF.appendChild(botaoAF);
-
-        function popupAF() {
-            x++;
-
-            popup3.style.display = 'block';
-            conteudo.value = "";
-
-            let divTexto = document.createElement('div');
-            divTexto.setAttribute('id', 'divTexto' + x);
-
-            let p1 = document.createElement('p');
-            p1.setAttribute('id', 'texto' + x);
-
-            let deletebtn = document.createElement('button');
-            deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-            deletebtn.classList.add('botaodeletar');
-            deletebtn.setAttribute('id', 'botaodeletar' + x);
-
-            document.addEventListener("keyup", function(event) {if (event.code === 'Enter') {enviar2.click();}});
-            enviar2.addEventListener('click', () => {
-                if (conteudo.value == "") {
-                    console.log('[ERRO] Digite um texto');
-                } else {
-                    divTexto.classList.add('textcard');
-                    divTexto.appendChild(p1);
-                    divTexto.appendChild(deletebtn);
-                    divTextos.appendChild(divTexto);
-    
-                    let p2 = document.getElementById('texto' + x);
-                    p2.innerHTML = conteudo.value;
-                    let deletebtn2 = document.getElementById('botaodeletar' + x);
-                    deletebtn2.addEventListener('click', () => {
-                        divTexto.style.display = 'none';
-                    });
-    
-                    popup3.style.display = 'none';
-                }
-            });
-        }
-
-        popup.style.display = 'none';
-    }
-}
-
-function zfazendo() {
-    if (divFA.classList.contains('fazendo')) {
+    } else if (id == 2 && divAF.classList.contains('fazendo')) {
         alert('[ERRO] O Card Fazendo já existe.');
-    } else {
-        divFA.classList.add('default');
-        divFA.classList.add('fazendo');
-        cards.appendChild(divFA);
-
-        let fecharFA = document.createElement('button');
-        fecharFA.classList.add('fechar');
-        fecharFA.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-        fecharFA.addEventListener('click', () => {
-            divFA.classList.remove('fazendo');
-            divFA.removeChild(divTextos);
-            divFA.removeChild(fecharFA)
-            divFA.removeChild(h2FA);
-            divFA.removeChild(botaoFA);
-            cards.removeChild(divFA);
-        });
-        divFA.appendChild(fecharFA);
-
-        let h2FA = document.createElement('h2');
-        h2FA.innerHTML = 'Fazendo';
-        divFA.appendChild(h2FA);
-
-        let divTextos = document.createElement('div');
-        divFA.appendChild(divTextos);
-
-        let botaoFA = document.createElement('button');
-        botaoFA.classList.add('addbtn');
-        botaoFA.innerHTML = '+ Adicionar Lembrete';
-        botaoFA.addEventListener('click', () => {
-            popupFA();
-        })
-        divFA.appendChild(botaoFA);
-
-        function popupFA() {
-            x++;
-
-            popup3.style.display = 'block';
-            conteudo.value = "";
-
-            let divTexto = document.createElement('div');
-            divTexto.setAttribute('id', 'divTexto' + x);
-
-            let p1 = document.createElement('p');
-            p1.setAttribute('id', 'texto' + x);
-
-            let deletebtn = document.createElement('button');
-            deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-            deletebtn.classList.add('botaodeletar');
-            deletebtn.setAttribute('id', 'botaodeletar' + x);
-
-            document.addEventListener("keyup", function(event) {if (event.code === 'Enter') {enviar2.click();}});
-            enviar2.addEventListener('click', () => {
-                if (conteudo.value == "") {
-                    console.log('[ERRO] Digite um texto');
-                } else {
-                    divTexto.classList.add('textcard');
-                    divTexto.appendChild(p1);
-                    divTexto.appendChild(deletebtn);
-                    divTextos.appendChild(divTexto);
-    
-                    let p2 = document.getElementById('texto' + x);
-                    p2.innerHTML = conteudo.value;
-                    let deletebtn2 = document.getElementById('botaodeletar' + x);
-                    deletebtn2.addEventListener('click', () => {
-                        divTexto.style.display = 'none';
-                    });
-    
-                    popup3.style.display = 'none';
-                }
-            });
-        }
-
-        popup.style.display = 'none';
-    }
-}
-
-function zfeito() {
-    if (divFE.classList.contains('feito')) {
+    } else if (id == 3 && divAF.classList.contains('feito')) {
         alert('[ERRO] O Card Feito já existe.');
     } else {
-        divFE.classList.add('default');
-        divFE.classList.add('feito');
-        cards.appendChild(divFE);
-
-        let fecharFE = document.createElement('button');
-        fecharFE.classList.add('fechar');
-        fecharFE.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-        fecharFE.addEventListener('click', () => {
-            divFE.classList.remove('feito');
-            divFE.removeChild(divTextos);
-            divFE.removeChild(fecharFE)
-            divFE.removeChild(h2FE);
-            divFE.removeChild(botaoFE);
-            cards.removeChild(divFE);
-        });
-        divFE.appendChild(fecharFE);
-
-        let h2FE = document.createElement('h2');
-        h2FE.innerHTML = 'Feito';
-        divFE.appendChild(h2FE);
-        
-        let divTextos = document.createElement('div');
-        divFE.appendChild(divTextos);
-
-        let botaoFE = document.createElement('button');
-        botaoFE.classList.add('addbtn');
-        botaoFE.innerHTML = '+ Adicionar Lembrete';
-        botaoFE.addEventListener('click', () => {
-            popupFE();
-        })
-        divFE.appendChild(botaoFE);
-
-        function popupFE() {
-            x++;
-
-            popup3.style.display = 'block';
-            conteudo.value = "";
-
-            let divTexto = document.createElement('div');
-            divTexto.setAttribute('id', 'divTexto' + x);
-
-            let p1 = document.createElement('p');
-            p1.setAttribute('id', 'texto' + x);
-
-            let deletebtn = document.createElement('button');
-            deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-            deletebtn.classList.add('botaodeletar');
-            deletebtn.setAttribute('id', 'botaodeletar' + x);
-
-            document.addEventListener("keyup", function(event) {if (event.code === 'Enter') {enviar2.click();}});
-            enviar2.addEventListener('click', () => {
-                if (conteudo.value == "") {
-                    console.log('[ERRO] Digite um texto');
-                } else {
-                    divTexto.classList.add('textcard');
-                    divTexto.appendChild(p1);
-                    divTexto.appendChild(deletebtn);
-                    divTextos.appendChild(divTexto);
+        if (id == 1) {
+            divAF.classList.add('default');
+            divAF.classList.add('afazer');
+            cards.appendChild(divAF);
     
-                    let p2 = document.getElementById('texto' + x);
-                    p2.innerHTML = conteudo.value;
-                    let deletebtn2 = document.getElementById('botaodeletar' + x);
-                    deletebtn2.addEventListener('click', () => {
-                        divTexto.style.display = 'none';
-                    });
-    
-                    popup3.style.display = 'none';
-                }
+            let fecharAF = document.createElement('button');
+            fecharAF.classList.add('fechar');
+            fecharAF.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            fecharAF.addEventListener('click', () => {
+                divAF.classList.remove('afazer');
+                divAF.removeChild(divTextos);
+                divAF.removeChild(fecharAF)
+                divAF.removeChild(h2AF);
+                divAF.removeChild(botaoAF);
+                cards.removeChild(divAF);
             });
+            divAF.appendChild(fecharAF);
+    
+            let h2AF = document.createElement('h2');
+            h2AF.innerHTML = 'A Fazeres';
+            divAF.appendChild(h2AF);
+    
+            let divTextos = document.createElement('div');
+            divAF.appendChild(divTextos);
+    
+            let botaoAF = document.createElement('button');
+            botaoAF.classList.add('addbtn');
+            botaoAF.innerHTML = '+ Adicionar Lembrete';
+            botaoAF.addEventListener('click', () => {
+                popupAF();
+            })
+            divAF.appendChild(botaoAF);
+    
+            const popupAF = () => {
+                x++;
+    
+                popup3.style.display = 'block';
+                conteudo.value = "";
+    
+                let divTexto = document.createElement('div');
+                divTexto.setAttribute('id', 'divTexto' + x);
+    
+                let p1 = document.createElement('p');
+                p1.setAttribute('id', 'texto' + x);
+    
+                let deletebtn = document.createElement('button');
+                deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+                deletebtn.classList.add('botaodeletar');
+                deletebtn.setAttribute('id', 'botaodeletar' + x);
+    
+                document.addEventListener("keyup", function(event) {if (event.code === 'Enter') {enviar2.click();}});
+                enviar2.addEventListener('click', () => {
+                    if (conteudo.value == "") {
+                        console.log('[ERRO] Digite um texto');
+                    } else {
+                        divTexto.classList.add('textcard');
+                        divTexto.appendChild(p1);
+                        divTexto.appendChild(deletebtn);
+                        divTextos.appendChild(divTexto);
+        
+                        let p2 = document.getElementById('texto' + x);
+                        p2.innerHTML = conteudo.value;
+                        let deletebtn2 = document.getElementById('botaodeletar' + x);
+                        deletebtn2.addEventListener('click', () => {
+                            divTexto.style.display = 'none';
+                        });
+        
+                        popup3.style.display = 'none';
+                    }
+                });
+            }
+        } else if (id == 2) {
+            divFA.classList.add('default');
+            divFA.classList.add('fazendo');
+            cards.appendChild(divFA);
+
+            let fecharFA = document.createElement('button');
+            fecharFA.classList.add('fechar');
+            fecharFA.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            fecharFA.addEventListener('click', () => {
+                divFA.classList.remove('fazendo');
+                divFA.removeChild(divTextos);
+                divFA.removeChild(fecharFA)
+                divFA.removeChild(h2FA);
+                divFA.removeChild(botaoFA);
+                cards.removeChild(divFA);
+            });
+            divFA.appendChild(fecharFA);
+
+            let h2FA = document.createElement('h2');
+            h2FA.innerHTML = 'Fazendo';
+            divFA.appendChild(h2FA);
+
+            let divTextos = document.createElement('div');
+            divFA.appendChild(divTextos);
+
+            let botaoFA = document.createElement('button');
+            botaoFA.classList.add('addbtn');
+            botaoFA.innerHTML = '+ Adicionar Lembrete';
+            botaoFA.addEventListener('click', () => {
+                popupFA();
+            })
+            divFA.appendChild(botaoFA);
+
+            const popupFA = () => {
+                x++;
+
+                popup3.style.display = 'block';
+                conteudo.value = "";
+
+                let divTexto = document.createElement('div');
+                divTexto.setAttribute('id', 'divTexto' + x);
+
+                let p1 = document.createElement('p');
+                p1.setAttribute('id', 'texto' + x);
+
+                let deletebtn = document.createElement('button');
+                deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+                deletebtn.classList.add('botaodeletar');
+                deletebtn.setAttribute('id', 'botaodeletar' + x);
+
+                document.addEventListener("keyup", function(event) {if (event.code === 'Enter') {enviar2.click();}});
+                enviar2.addEventListener('click', () => {
+                    if (conteudo.value == "") {
+                        console.log('[ERRO] Digite um texto');
+                    } else {
+                        divTexto.classList.add('textcard');
+                        divTexto.appendChild(p1);
+                        divTexto.appendChild(deletebtn);
+                        divTextos.appendChild(divTexto);
+        
+                        let p2 = document.getElementById('texto' + x);
+                        p2.innerHTML = conteudo.value;
+                        let deletebtn2 = document.getElementById('botaodeletar' + x);
+                        deletebtn2.addEventListener('click', () => {
+                            divTexto.style.display = 'none';
+                        });
+        
+                        popup3.style.display = 'none';
+                    }
+                });
+            }
+        } else if (id == 3) {
+            divFE.classList.add('default');
+            divFE.classList.add('feito');
+            cards.appendChild(divFE);
+    
+            let fecharFE = document.createElement('button');
+            fecharFE.classList.add('fechar');
+            fecharFE.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            fecharFE.addEventListener('click', () => {
+                divFE.classList.remove('feito');
+                divFE.removeChild(divTextos);
+                divFE.removeChild(fecharFE)
+                divFE.removeChild(h2FE);
+                divFE.removeChild(botaoFE);
+                cards.removeChild(divFE);
+            });
+            divFE.appendChild(fecharFE);
+    
+            let h2FE = document.createElement('h2');
+            h2FE.innerHTML = 'Feito';
+            divFE.appendChild(h2FE);
+            
+            let divTextos = document.createElement('div');
+            divFE.appendChild(divTextos);
+    
+            let botaoFE = document.createElement('button');
+            botaoFE.classList.add('addbtn');
+            botaoFE.innerHTML = '+ Adicionar Lembrete';
+            botaoFE.addEventListener('click', () => {
+                popupFE();
+            })
+            divFE.appendChild(botaoFE);
+    
+            const popupFE = () => {
+                x++;
+    
+                popup3.style.display = 'block';
+                conteudo.value = "";
+    
+                let divTexto = document.createElement('div');
+                divTexto.setAttribute('id', 'divTexto' + x);
+    
+                let p1 = document.createElement('p');
+                p1.setAttribute('id', 'texto' + x);
+    
+                let deletebtn = document.createElement('button');
+                deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+                deletebtn.classList.add('botaodeletar');
+                deletebtn.setAttribute('id', 'botaodeletar' + x);
+    
+                document.addEventListener("keyup", (e) => {if (e.code === 'Enter') {enviar2.click();}});
+                enviar2.addEventListener('click', () => {
+                    if (conteudo.value == "") {
+                        console.log('[ERRO] Digite um texto');
+                    } else {
+                        divTexto.classList.add('textcard');
+                        divTexto.appendChild(p1);
+                        divTexto.appendChild(deletebtn);
+                        divTextos.appendChild(divTexto);
+        
+                        let p2 = document.getElementById('texto' + x);
+                        p2.innerHTML = conteudo.value;
+                        let deletebtn2 = document.getElementById('botaodeletar' + x);
+                        deletebtn2.addEventListener('click', () => {
+                            divTexto.style.display = 'none';
+                        });
+        
+                        popup3.style.display = 'none';
+                    }
+                });
+            }
         }
 
         popup.style.display = 'none';
+
     }
 }
 
-//---------------------------------------------------------------//
-
-function novoCard() {
+const novoCard = () => {
     if (titulo.value == "" || titulo.value.length > "20") {
         alert('[ERRO] O Título não pode ficar em branco, e tem que ser menor do que 20 caracteres.');
         console.log(cor.value);
