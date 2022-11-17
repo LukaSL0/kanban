@@ -57,9 +57,9 @@ const cardDefinido = (id) => {
     console.log(id);
     if (id == 1 && divAF.classList.contains('afazer')) {
         alert('[ERRO] O Card A Fazeres já existe.');
-    } else if (id == 2 && divAF.classList.contains('fazendo')) {
+    } else if (id == 2 && divFA.classList.contains('fazendo')) {
         alert('[ERRO] O Card Fazendo já existe.');
-    } else if (id == 3 && divAF.classList.contains('feito')) {
+    } else if (id == 3 && divFE.classList.contains('feito')) {
         alert('[ERRO] O Card Feito já existe.');
     } else {
         if (id == 1) {
@@ -322,7 +322,7 @@ const novoCard = () => {
         })
         divAL.appendChild(botaoAL);
 
-        function popupAL() {
+        const popupAL = () => {
             x++;
 
             popup3.style.display = 'block';
