@@ -11,10 +11,6 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-input {
-    outline: 0;
-}
-
 /*--------------------------------------------------------------------------*/
 
 .popup, .popup2, .popup3 {
@@ -47,7 +43,33 @@ input {
 }
 
 .popupoptns button {
+    transition: all 0.3s;
     cursor: pointer;
+    background-color: rgb(210, 210, 210);
+    border-radius: 4px;
+    border: 1px solid;
+    padding: 1px 5px;
+}
+
+.popupoptns button:hover {
+    transition: all 0.3s;
+    background-color: #b8babd;
+}
+
+.popupoptns .afazer:hover {
+    background-color: #77c1f6;
+}
+
+.popupoptns .fazendo:hover {
+    background-color: #8b5dc5;
+}
+
+.popupoptns .feito:hover {
+    background-color: #7acc97;
+}
+
+.botaomeiopop1 {
+    margin: 0 10px;
 }
 
 .popupoptns input {
@@ -59,7 +81,8 @@ input {
 .popupoptns .confirmar {
     position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-60%);
+    margin-left: 40px;
 }
 
 .popupoptns .fechar {
@@ -76,6 +99,30 @@ input {
 .popupoptns .fechar:hover {
     background-color: rgb(216, 216, 216);
     transition: all 0.3s;
+}
+
+.popupoptns input {
+    outline: 0;
+    border-radius: 4px;
+    padding: 3px 7px;
+    border: 1px solid;
+}
+
+#cor {
+    transition: all 0.3s;
+    width: 35px;
+    position: absolute;
+    cursor: pointer;
+    padding: 0 2px;
+}
+
+#cor:hover {
+    transition: all 0.3s;
+    background-color: #d8d8d8;
+}
+
+#enviar2 {
+    margin-left: 2px;
 }
 
 /*---------------------------------------------------*/
@@ -215,10 +262,6 @@ header button:hover {
     cursor: pointer;
 }
 
-#cor {
-    cursor: pointer;
-}
-
 /*----------------------------------------------*/
 
 @media screen and (max-width: 550px) {
@@ -247,6 +290,9 @@ header button:hover {
     header button {
         font-size: 12px;
     }
+    #enviar2 {
+        padding: 4px 5px;
+    }    
 }
 
 @media screen and (max-width: 300px) { /* Galaxy Fold or smaller */
