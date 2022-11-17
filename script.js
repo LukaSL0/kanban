@@ -63,39 +63,52 @@ const cardDefinido = (id) => {
         alert('[ERRO] O Card Feito já existe.');
     } else {
         if (id == 1) {
-            divAF.classList.add('default');
-            divAF.classList.add('afazer');
-            cards.appendChild(divAF);
+            var divPadrao = divAF;
+            var classePadrao = 'afazer';
+            var textoPadrao = 'A Fazeres';
+        } else if (id == 2) {
+            var divPadrao = divFA;
+            var classePadrao = 'fazendo';
+            var textoPadrao = 'Fazendo';
+        } else if (id == 3) {
+            var divPadrao = divFE;
+            var classePadrao = 'feito';
+            var textoPadrao = 'Feito';
+        }
+
+        divPadrao.classList.add('default');
+            divPadrao.classList.add(classePadrao);
+            cards.appendChild(divPadrao);
     
             let fecharAF = document.createElement('button');
             fecharAF.classList.add('fechar');
             fecharAF.innerHTML = '<i class="fa-solid fa-xmark"></i>';
             fecharAF.addEventListener('click', () => {
-                divAF.classList.remove('afazer');
-                divAF.removeChild(divTextos);
-                divAF.removeChild(fecharAF)
-                divAF.removeChild(h2AF);
-                divAF.removeChild(botaoAF);
-                cards.removeChild(divAF);
+                divPadrao.classList.remove(classePadrao);
+                divPadrao.removeChild(divTextos);
+                divPadrao.removeChild(fecharAF)
+                divPadrao.removeChild(h2AF);
+                divPadrao.removeChild(botaoAF);
+                cards.removeChild(divPadrao);
             });
-            divAF.appendChild(fecharAF);
+            divPadrao.appendChild(fecharAF);
     
             let h2AF = document.createElement('h2');
-            h2AF.innerHTML = 'A Fazeres';
-            divAF.appendChild(h2AF);
+            h2AF.innerHTML = textoPadrao;
+            divPadrao.appendChild(h2AF);
     
             let divTextos = document.createElement('div');
-            divAF.appendChild(divTextos);
+            divPadrao.appendChild(divTextos);
     
             let botaoAF = document.createElement('button');
             botaoAF.classList.add('addbtn');
             botaoAF.innerHTML = '+ Adicionar Lembrete';
             botaoAF.addEventListener('click', () => {
-                popupAF();
+                popupPadrao();
             })
-            divAF.appendChild(botaoAF);
+            divPadrao.appendChild(botaoAF);
     
-            const popupAF = () => {
+            const popupPadrao = () => {
                 x++;
     
                 popup3.style.display = 'block';
@@ -133,149 +146,6 @@ const cardDefinido = (id) => {
                     }
                 });
             }
-        } else if (id == 2) {
-            divFA.classList.add('default');
-            divFA.classList.add('fazendo');
-            cards.appendChild(divFA);
-
-            let fecharFA = document.createElement('button');
-            fecharFA.classList.add('fechar');
-            fecharFA.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            fecharFA.addEventListener('click', () => {
-                divFA.classList.remove('fazendo');
-                divFA.removeChild(divTextos);
-                divFA.removeChild(fecharFA)
-                divFA.removeChild(h2FA);
-                divFA.removeChild(botaoFA);
-                cards.removeChild(divFA);
-            });
-            divFA.appendChild(fecharFA);
-
-            let h2FA = document.createElement('h2');
-            h2FA.innerHTML = 'Fazendo';
-            divFA.appendChild(h2FA);
-
-            let divTextos = document.createElement('div');
-            divFA.appendChild(divTextos);
-
-            let botaoFA = document.createElement('button');
-            botaoFA.classList.add('addbtn');
-            botaoFA.innerHTML = '+ Adicionar Lembrete';
-            botaoFA.addEventListener('click', () => {
-                popupFA();
-            })
-            divFA.appendChild(botaoFA);
-
-            const popupFA = () => {
-                x++;
-
-                popup3.style.display = 'block';
-                conteudo.value = "";
-
-                let divTexto = document.createElement('div');
-                divTexto.setAttribute('id', 'divTexto' + x);
-
-                let p1 = document.createElement('p');
-                p1.setAttribute('id', 'texto' + x);
-
-                let deletebtn = document.createElement('button');
-                deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-                deletebtn.classList.add('botaodeletar');
-                deletebtn.setAttribute('id', 'botaodeletar' + x);
-
-                document.addEventListener("keyup", function(event) {if (event.code === 'Enter') {enviar2.click();}});
-                enviar2.addEventListener('click', () => {
-                    if (conteudo.value == "") {
-                        console.log('[ERRO] Digite um texto');
-                    } else {
-                        divTexto.classList.add('textcard');
-                        divTexto.appendChild(p1);
-                        divTexto.appendChild(deletebtn);
-                        divTextos.appendChild(divTexto);
-        
-                        let p2 = document.getElementById('texto' + x);
-                        p2.innerHTML = conteudo.value;
-                        let deletebtn2 = document.getElementById('botaodeletar' + x);
-                        deletebtn2.addEventListener('click', () => {
-                            divTexto.style.display = 'none';
-                        });
-        
-                        popup3.style.display = 'none';
-                    }
-                });
-            }
-        } else if (id == 3) {
-            divFE.classList.add('default');
-            divFE.classList.add('feito');
-            cards.appendChild(divFE);
-    
-            let fecharFE = document.createElement('button');
-            fecharFE.classList.add('fechar');
-            fecharFE.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            fecharFE.addEventListener('click', () => {
-                divFE.classList.remove('feito');
-                divFE.removeChild(divTextos);
-                divFE.removeChild(fecharFE)
-                divFE.removeChild(h2FE);
-                divFE.removeChild(botaoFE);
-                cards.removeChild(divFE);
-            });
-            divFE.appendChild(fecharFE);
-    
-            let h2FE = document.createElement('h2');
-            h2FE.innerHTML = 'Feito';
-            divFE.appendChild(h2FE);
-            
-            let divTextos = document.createElement('div');
-            divFE.appendChild(divTextos);
-    
-            let botaoFE = document.createElement('button');
-            botaoFE.classList.add('addbtn');
-            botaoFE.innerHTML = '+ Adicionar Lembrete';
-            botaoFE.addEventListener('click', () => {
-                popupFE();
-            })
-            divFE.appendChild(botaoFE);
-    
-            const popupFE = () => {
-                x++;
-    
-                popup3.style.display = 'block';
-                conteudo.value = "";
-    
-                let divTexto = document.createElement('div');
-                divTexto.setAttribute('id', 'divTexto' + x);
-    
-                let p1 = document.createElement('p');
-                p1.setAttribute('id', 'texto' + x);
-    
-                let deletebtn = document.createElement('button');
-                deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-                deletebtn.classList.add('botaodeletar');
-                deletebtn.setAttribute('id', 'botaodeletar' + x);
-    
-                document.addEventListener("keyup", (e) => {if (e.code === 'Enter') {enviar2.click();}});
-                enviar2.addEventListener('click', () => {
-                    if (conteudo.value == "") {
-                        console.log('[ERRO] Digite um texto');
-                    } else {
-                        divTexto.classList.add('textcard');
-                        divTexto.appendChild(p1);
-                        divTexto.appendChild(deletebtn);
-                        divTextos.appendChild(divTexto);
-        
-                        let p2 = document.getElementById('texto' + x);
-                        p2.innerHTML = conteudo.value;
-                        let deletebtn2 = document.getElementById('botaodeletar' + x);
-                        deletebtn2.addEventListener('click', () => {
-                            divTexto.style.display = 'none';
-                        });
-        
-                        popup3.style.display = 'none';
-                    }
-                });
-            }
-        }
 
         popup.style.display = 'none';
 
