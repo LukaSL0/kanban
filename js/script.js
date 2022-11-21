@@ -29,9 +29,9 @@ novo.addEventListener('click', () => {
 
 confirmar.addEventListener('click', () => {novoCard();});
 
-fechar.addEventListener('click', () => {popup.style.display = 'none';});
-fechar2.addEventListener('click', () => {popup2.style.display = 'none';});
-fechar3.addEventListener('click', () => {popup3.style.display = 'none';});
+fechar.addEventListener('click', () => {popup.style.display = 'none'})
+fechar2.addEventListener('click', () => {popup2.style.display = 'none'})
+fechar3.addEventListener('click', () => {popup3.style.display = 'none'})
 
 // ---------------------------------------------------------------//
 
@@ -54,7 +54,6 @@ const divFE = document.createElement('div');
 let x = 0;
 
 const cardDefinido = (id) => {
-    console.log(id);
     if (id == 1 && divAF.classList.contains('afazer')) {
         alert('[ERRO] O Card A Fazeres já existe.');
     } else if (id == 2 && divFA.classList.contains('fazendo')) {
@@ -104,7 +103,7 @@ const cardDefinido = (id) => {
             botaoAF.classList.add('addbtn');
             botaoAF.innerHTML = '+ Adicionar Lembrete';
             botaoAF.addEventListener('click', () => {
-                popupPadrao();
+                popupPadrao()
             })
             divPadrao.appendChild(botaoAF);
     
@@ -128,7 +127,7 @@ const cardDefinido = (id) => {
                 document.addEventListener("keyup", function(event) {if (event.code === 'Enter') {enviar2.click();}});
                 enviar2.addEventListener('click', () => {
                     if (conteudo.value == "") {
-                        console.log('[ERRO] Digite um texto');
+                        console.log('[ERRO] Digite um texto')
                     } else {
                         divTexto.classList.add('textcard');
                         divTexto.appendChild(p1);
@@ -155,7 +154,6 @@ const cardDefinido = (id) => {
 const novoCard = () => {
     if (titulo.value == "" || titulo.value.length > "20") {
         alert('[ERRO] O Título não pode ficar em branco, e tem que ser menor do que 20 caracteres.');
-        console.log(cor.value);
     } else {
         x++;
 
@@ -174,7 +172,7 @@ const novoCard = () => {
             divAL.removeChild(h2AL);
             divAL.removeChild(botaoAL);
             cards.removeChild(divAL);
-        });
+        })
         divAL.appendChild(fecharAL);
 
         let h2AL = document.createElement('h2');
@@ -188,7 +186,7 @@ const novoCard = () => {
         botaoAL.classList.add('addbtn');
         botaoAL.innerHTML = '+ Adicionar Lembrete';
         botaoAL.addEventListener('click', () => {
-            popupAL();
+            popupAL()
         })
         divAL.appendChild(botaoAL);
 
@@ -228,7 +226,7 @@ const novoCard = () => {
     
                     popup3.style.display = 'none';
                 }
-            });
+            })
         }
 
 
