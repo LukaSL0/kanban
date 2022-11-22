@@ -145,9 +145,7 @@ const cardDefinido = (id) => {
                     }
                 });
             }
-
         popup.style.display = 'none';
-
     }
 }
 
@@ -228,8 +226,6 @@ const novoCard = () => {
                 }
             })
         }
-
-
         cor.value = "#b8babd";
         titulo.value = "";
         popup2.style.display = 'none';
